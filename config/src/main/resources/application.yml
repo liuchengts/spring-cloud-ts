@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/liuchengts/cloud-config-repo.git #远程配置，获取spring的配置
+          search-paths: test
+          basedir: config  #git的配置文件会加载到本地的目录
+server:
+    port: 9800
+management:
+  security:
+    enabled: false
+
+
+
