@@ -10,6 +10,7 @@
         <module>cloud-test</module>
         <module>eureka</module>
         <module>zuul</module>
+        <module>config</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
