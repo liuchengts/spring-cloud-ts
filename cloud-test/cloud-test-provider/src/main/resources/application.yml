@@ -1,0 +1,16 @@
+server:
+    port: 3001
+eureka:
+    client:
+      service-url:
+         defaultZone: http://user:123456@localhost:8762/eureka/
+spring:
+  application:
+    name: test-provider
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+  zipkin:
+    base-url: http://localhost:9412

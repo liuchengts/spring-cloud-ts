@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,7 @@ import spring.cloud.api.client.DemoClient;
 /**
  * Created by apple on 2017/12/7.
  */
+@Slf4j
 @RestController
 public class TestController {
     private final DemoClient demoClient;
@@ -23,6 +25,12 @@ public class TestController {
 
     @RequestMapping
     public String index() {
+        log.error("测试错误");
+        log.info("测试info输出");
+        log.debug("测试debug输出");
+        if(1==1){
+            throw new  RuntimeException("自定义异常");
+        }
         return demoClient.in();
     }
 

@@ -1,0 +1,20 @@
+server:
+    port: 8762
+spring:
+ application:
+   name: eureka
+eureka:
+ client:
+   registerWithEureka: false
+   fetchRegistry: false
+   service-url:
+       defaultZone: http://user:123456@localhost:${server.port}/eureka/
+ server:
+   waitTimeInMsWhenSyncEmpty: 0
+   enableSelfPreservation: false
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123456
