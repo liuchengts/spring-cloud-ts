@@ -20,5 +20,5 @@ security:
     password: 123456
 turbine:
   app-config: test-provider,test-consumer #配置Eureka中的serviceId列表，表明监控哪些服务
-  cluster-name-expression: default #指定聚合哪些集群，多个使用”,”分割，默认为default
-  combine-host-port: true #同一主机通过主机名与端口号进行区分，默认是false 用host区分
+  cluster-name-expression: "'default'" #指定聚合哪些集群，多个使用”,”分割，默认为default
+  combine-host-port: false #同一主机通过主机名与端口号进行区分，默认是false 用host区分

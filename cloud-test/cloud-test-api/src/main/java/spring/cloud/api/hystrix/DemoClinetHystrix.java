@@ -11,6 +11,6 @@ public class DemoClinetHystrix implements DemoClient {
     @Override
     public String in() {
         System.out.println("熔断执行in()");
-        return null;
+        return "熔断执行in()";
     }
 }
