@@ -14,11 +14,6 @@
     <name>cloud-test-provider</name>
     <description>Demo project for Spring Boot</description>
     <dependencies>
-        <!--eureka注册与发现 支持-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
         <dependency>
             <groupId>cloud-test</groupId>
             <artifactId>cloud-test-api</artifactId>

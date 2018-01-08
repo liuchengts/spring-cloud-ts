@@ -28,9 +28,6 @@ public class TestController {
         log.error("测试错误");
         log.info("测试info输出");
         log.debug("测试debug输出");
-        if(1==1){
-            throw new  RuntimeException("自定义异常");
-        }
         return demoClient.in();
     }
 

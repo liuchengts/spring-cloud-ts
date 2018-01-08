@@ -16,9 +16,6 @@ public class DemoController implements DemoClient {
         log.error("p测试错误");
         log.info("p测试info输出");
         log.debug("p测试debug输出");
-        if(1==1){
-            throw new  RuntimeException("p自定义异常");
-        }
         return "调用in()成功";
     }
 }
