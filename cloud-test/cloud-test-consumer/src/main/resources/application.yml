@@ -1,9 +1,14 @@
 server:
     port: 3002
+management:
+  port: 4002
 eureka:
     client:
       service-url:
          defaultZone: http://user:123456@localhost:8762/eureka/
+    instance:
+      metadata-map:
+         management.port: ${management.port}
 spring:
   application:
     name: test-consumer

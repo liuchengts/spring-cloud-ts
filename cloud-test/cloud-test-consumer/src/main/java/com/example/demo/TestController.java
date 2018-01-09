@@ -23,7 +23,7 @@ public class TestController {
         this.demo2Client = demo2Client;
     }
 
-    @RequestMapping
+    @RequestMapping("/in")
     public String index() {
         log.error("测试错误");
         log.info("测试info输出");

@@ -12,6 +12,7 @@
         <module>zuul</module>
         <module>config</module>
         <module>zipkin</module>
+        <module>hystrix-dashboard</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
