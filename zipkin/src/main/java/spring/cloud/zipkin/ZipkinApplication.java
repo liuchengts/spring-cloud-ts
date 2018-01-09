@@ -11,7 +11,6 @@ import zipkin.server.EnableZipkinServer;
 @EnableDiscoveryClient //注册到eureka
 //@EnableZipkinStreamServer //使用Stream方式启动ZipkinServer
 @EnableZipkinServer
-@ConditionalOnProperty(name={"zipkin.storage.type"},havingValue = "mysql")
 public class ZipkinApplication {
 
 	public static void main(String[] args) {

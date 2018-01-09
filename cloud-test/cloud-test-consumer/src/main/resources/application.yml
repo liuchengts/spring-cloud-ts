@@ -12,10 +12,10 @@ eureka:
 spring:
   application:
     name: test-consumer
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   zipkin:
     base-url: http://localhost:9412

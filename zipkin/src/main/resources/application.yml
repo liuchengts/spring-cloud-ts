@@ -1,5 +1,5 @@
 server:
-    port: 9412
+    port: 9411
 eureka:
     client:
       service-url:
@@ -7,11 +7,11 @@ eureka:
 spring:
   application:
     name: zipkin
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   datasource:
     url: jdbc:mysql://localhost:3308/zipkin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false&useOldAliasMetadataBehavior=true
     username: root
