@@ -9,15 +9,15 @@ spring:
     name: zuul
 
 zuul:
+  ignored-patterns: /**/test  #排除路径中带test结尾的地址代理
   routes:
-     api-a-url:
-           path: /api/c/**
-           serviceId: test-consumer
-    api-b-url:
-           path: /api/p/**
-           serviceId: test-provider
-##禁用过滤器（zuul.过滤器className.filterType.disable=true）
-zuul:
+    test1:
+      path: /api/c/**
+      serviceId: test-consumer
+    test2:
+      path: /api/p/**
+      serviceId: test-consumer
+#禁用过滤器（zuul.过滤器SimpleClassName.filterType.disable=true）
   PreRequestFilter:
      pre:
        disable: true

@@ -30,7 +30,13 @@ public class TestController {
         log.debug("测试debug输出");
         return demoClient.in();
     }
-
+    @RequestMapping("/test")
+    public String test() {
+        log.error("测试错误");
+        log.info("测试info输出");
+        log.debug("测试debug输出");
+        return demoClient.in();
+    }
     @RequestMapping("/index")
     public String index(@RequestParam(value = "id") Long id) {
         return demo2Client.in2(id);

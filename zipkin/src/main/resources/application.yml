@@ -20,7 +20,3 @@ spring:
     schema: classpath:/zipkin.sql
     initialize: true
     continue-on-error: true
-
-zipkin:
-  storage:
-    type: mysql

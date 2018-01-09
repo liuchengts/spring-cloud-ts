@@ -5,7 +5,6 @@ import com.netflix.zuul.context.RequestContext;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.annotation.Order;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,17 +13,18 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class PreRequestFilter extends ZuulFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(PreRequestFilter.class);
-
     @Override
     public String filterType() {
-        //pre、route、post、error等几种取值
-        //pre表示请求前执行
+//        pre：可以在请求被路由之前调用
+//        route：在路由请求时候被调用
+//        post：在route和error过滤器之后被调用
+//        error：处理请求时发生错误时被调用
         return "pre";
     }
 
     @Override
     public int filterOrder() {
-        //返回一个int值来指定过滤器的执行顺序，不同的过滤器允许返回相同的数字。
+        //返回一个int值来指定过滤器的执行顺序，不同的过滤器允许返回相同的数字，数字越大，优先级越低。
         return 0;
     }
 
@@ -36,12 +36,12 @@ public class PreRequestFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-        //过滤器的具体逻辑
         RequestContext ctx = RequestContext.getCurrentContext();
+        //过滤器的具体逻辑
         HttpServletRequest request = ctx.getRequest();
-        LOGGER.info("日志输出==============="+String.format("send %s request to %s", request.getMethod(), request.getRequestURL().toString()));
-        String s=request.getParameter("s");
-        if(StringUtils.isBlank(s)){
+        LOGGER.info("日志输出===============" + String.format("send %s request to %s", request.getMethod(), request.getRequestURL().toString()));
+        String s = request.getParameter("s");
+        if (StringUtils.isBlank(s)) {
             LOGGER.info("===========401=====================");
             //设置zuul不对当前请求路由
             ctx.setSendZuulResponse(false);

@@ -2,6 +2,7 @@ package spring.cloud.zipkin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
 import zipkin.server.EnableZipkinServer;
@@ -10,6 +11,7 @@ import zipkin.server.EnableZipkinServer;
 @EnableDiscoveryClient //注册到eureka
 //@EnableZipkinStreamServer //使用Stream方式启动ZipkinServer
 @EnableZipkinServer
+@ConditionalOnProperty(name={"zipkin.storage.type"},havingValue = "mysql")
 public class ZipkinApplication {
 
 	public static void main(String[] args) {
