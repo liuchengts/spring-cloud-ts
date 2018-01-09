@@ -1,0 +1,23 @@
+server:
+    port: 3000
+eureka:
+    client:
+      service-url:
+         defaultZone: http://user:123456@localhost:8762/eureka/
+spring:
+  application:
+    name: zuul
+
+#zuul:
+#  routes:
+#     api-a-url:
+#           path: /api/c/**
+#           serviceId: test-consumer
+#    api-b-url:
+#           path: /api/p/**
+#           serviceId: test-provider
+##禁用过滤器（zuul.过滤器className.filterType.disable=true）
+#zuul:
+#  PreRequestFilter:
+#     pre:
+#       disable: true
