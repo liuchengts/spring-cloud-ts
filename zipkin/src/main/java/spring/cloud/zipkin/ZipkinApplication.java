@@ -9,8 +9,8 @@ import zipkin.server.EnableZipkinServer;
 
 @SpringBootApplication
 @EnableDiscoveryClient //注册到eureka
-//@EnableZipkinStreamServer //使用Stream方式启动ZipkinServer
-@EnableZipkinServer
+@EnableZipkinStreamServer //使用Stream方式启动ZipkinServer
+//@EnableZipkinServer
 public class ZipkinApplication {
 
 	public static void main(String[] args) {
