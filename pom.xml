@@ -22,7 +22,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
-        <spring-cloud.version>Camden.SR7</spring-cloud.version>
+        <spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
+        <!--<spring-cloud.version>Camden.SR7</spring-cloud.version>-->
         <platform-bom.version>Brussels-SR6</platform-bom.version>
         <docker.image.prefix>springio</docker.image.prefix>
     </properties>

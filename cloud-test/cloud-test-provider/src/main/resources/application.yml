@@ -1,14 +1,9 @@
 server:
     port: 3001
-management:
-  port: 4001
 eureka:
     client:
       service-url:
          defaultZone: http://user:123456@localhost:8762/eureka/
-    instance:
-      metadata-map:
-         management.port: ${management.port}
 spring:
   application:
     name: test-provider
@@ -17,5 +12,8 @@ spring:
     port: 5672
     username: guest
     password: guest
-#  zipkin:
-#    base-url: http://localhost:9411
+
+#cloud Camden.SR7 之后的版本好像需要手动开启断路器
+feign:
+  hystrix:
+    enabled: true

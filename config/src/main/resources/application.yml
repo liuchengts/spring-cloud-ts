@@ -5,11 +5,24 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/liuchengts/cloud-config-repo.git #远程配置，获取spring的配置
+          #远程配置，获取spring的配置
+          uri: https://github.com/liuchengts/cloud-config-repo.git
           search-paths: test
-          basedir: config  #git的配置文件会加载到本地的目录
+          #git的配置文件会加载到本地的目录
+          basedir: config-tmp
+          #当本地目录与远程配置有冲突时是否强制拉取配置
+          force-pull: true
+  rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      username: guest
+      password: guest
 server:
     port: 9800
+eureka:
+    client:
+      service-url:
+         defaultZone: http://user:123456@localhost:8762/eureka/
 management:
   security:
     enabled: false

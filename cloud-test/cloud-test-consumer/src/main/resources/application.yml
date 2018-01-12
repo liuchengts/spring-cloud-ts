@@ -2,6 +2,8 @@ server:
     port: 3002
 management:
   port: 4002
+  security:
+    enabled: false
 eureka:
     client:
       service-url:
@@ -17,5 +19,14 @@ spring:
     port: 5672
     username: guest
     password: guest
+  cloud:
+    bus:
+      trace:
+        enabled: true
+
 #  zipkin:
 #    base-url: http://localhost:9411
+#cloud Camden.SR7 之后的版本好像需要手动开启断路器
+feign:
+  hystrix:
+    enabled: true
