@@ -13,7 +13,8 @@
         <module>config</module>
         <module>zipkin</module>
         <module>hystrix-dashboard</module>
-        <module>microservice-demo</module>
+        <module>microservice-demo-cloud</module>
+        <module>microservice-demo-dubbo</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

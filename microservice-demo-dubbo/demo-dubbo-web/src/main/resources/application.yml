@@ -1,0 +1,10 @@
+server:
+  port: 3007
+management:
+  port: 4007
+spring:
+  application:
+    name: demo-dubbo-web
+  dubbo:
+    appname: dubbo-dubbo-web
+    registry: zookeeper://localhost:2181

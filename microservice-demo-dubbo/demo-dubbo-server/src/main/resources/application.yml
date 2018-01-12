@@ -1,0 +1,33 @@
+server:
+    port: 3006
+management:
+  port: 4006
+spring:
+  application:
+    name: demo-dubbo-server
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: test-group
+  dubbo:
+    appname: dubbo-dubbo-server
+    registry: zookeeper://localhost:2181
+    port: 20800
+  datasource:
+    primary:
+        url: jdbc:mysql://localhost:3309/test1?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false&useOldAliasMetadataBehavior=true
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        #自动执行sql的功能未生效
+#        schema: classpath:/ddl/primary/init.ddl
+#        initialize: true
+#        continue-on-error: true
+    secondary:
+        url: jdbc:mysql://localhost:3310/test2?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false&useOldAliasMetadataBehavior=true
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+#        schema: classpath:/ddl/secondary/init.ddl
+#        initialize: true
+#        continue-on-error: true

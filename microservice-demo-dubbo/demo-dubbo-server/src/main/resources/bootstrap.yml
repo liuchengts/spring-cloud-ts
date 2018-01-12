@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo-dubbo-server
+  cloud:
+    config:
+      uri: http://localhost:9800
+      failFast: false
