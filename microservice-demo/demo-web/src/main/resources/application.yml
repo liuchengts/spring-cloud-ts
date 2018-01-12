@@ -1,0 +1,24 @@
+server:
+    port: 3005
+management:
+  port: 4005
+  security:
+    enabled: false
+eureka:
+    client:
+      service-url:
+         defaultZone: http://user:123456@localhost:8762/eureka/
+    instance:
+      metadata-map:
+         management.port: ${management.port}
+spring:
+  application:
+    name: demo-web
+  rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      username: guest
+      password: guest
+feign:
+  hystrix:
+    enabled: true
