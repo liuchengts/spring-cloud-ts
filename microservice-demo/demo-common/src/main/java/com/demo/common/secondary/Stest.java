@@ -1,4 +1,4 @@
-package com.demo.common;
+package com.demo.common.secondary;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,10 +19,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "test", schema = "test1")
+@Table(name = "stest", schema = "test2")
 @DynamicUpdate
 @DynamicInsert
-public class Test implements Serializable {
+public class Stest implements Serializable {
     /**
      * 主键，自增
      */

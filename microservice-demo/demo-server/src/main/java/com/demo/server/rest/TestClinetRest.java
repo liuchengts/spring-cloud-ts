@@ -1,8 +1,9 @@
 package com.demo.server.rest;
 
 import com.demo.cloud.starter.client.TestClient;
-import com.demo.common.Test;
-import com.demo.core.repository.TestRepository;
+import com.demo.common.primary.Test;
+import com.demo.common.secondary.Stest;
+import com.demo.core.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,18 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class TestClinetRest implements TestClient {
-
-    private final TestRepository testRepository;
+    private final TestService testService;
 
     @Autowired
-    public TestClinetRest(TestRepository testRepository) {
-        this.testRepository = testRepository;
+    public TestClinetRest(TestService testService) {
+        this.testService = testService;
     }
 
     @Override
-    public Test add(@RequestParam(value = "content") String content) {
-        return testRepository.save(Test.builder()
-                .content(content)
-                .build());
+    public String add(@RequestParam(value = "content") String content) {
+        testService.add(Test.builder()
+                        .content(content)
+                        .build(),
+                Stest.builder()
+                        .content(content)
+                        .build());
+        return "操作成功";
     }
 }

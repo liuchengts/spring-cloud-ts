@@ -17,6 +17,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.client.RestTemplate;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,8 +28,8 @@ import java.util.Date;
 @EnableHystrix//开启断路器功能
 @Configuration
 @EnableAsync //启用异步
-@EntityScan({"com.demo.common"})
-@EnableJpaRepositories({"com.demo.core.repository"})
+@EntityScan({"com.demo.common.*"})
+//@EnableJpaRepositories({"com.demo.core.repository.*"}) #单数据源可以使用此配置指定repository位置
 @ComponentScan({"com.demo"})
 public class DemoServerApplication {
     public static void main(String[] args) {

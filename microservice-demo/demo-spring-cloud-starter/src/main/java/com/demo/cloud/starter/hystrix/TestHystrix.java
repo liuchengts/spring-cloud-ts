@@ -1,7 +1,7 @@
 package com.demo.cloud.starter.hystrix;
 
 import com.demo.cloud.starter.client.TestClient;
-import com.demo.common.Test;
+import com.demo.common.primary.Test;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestHystrix implements TestClient {
 
-
     @Override
-    public Test add(String content) {
+    public String add(String content) {
         log.error("熔断执行");
-        return null;
+        return "熔断执行";
     }
 }

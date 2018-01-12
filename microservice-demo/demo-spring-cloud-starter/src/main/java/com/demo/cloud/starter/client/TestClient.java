@@ -2,7 +2,7 @@ package com.demo.cloud.starter.client;
 
 
 import com.demo.cloud.starter.hystrix.TestHystrix;
-import com.demo.common.Test;
+import com.demo.common.primary.Test;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +21,7 @@ public interface TestClient {
      * @return 返回日志对象
      */
     @RequestMapping(method = RequestMethod.GET, value = "/add")
-    Test add(@RequestParam(value = "content") String content);
+    String add(@RequestParam(value = "content") String content);
 
 
 }
