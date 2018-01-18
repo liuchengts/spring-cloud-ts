@@ -1,7 +1,9 @@
 package com.demo.core.service.impl;
 
+import com.demo.common.TestCache;
 import com.demo.common.primary.Test;
 import com.demo.common.secondary.Stest;
+import com.demo.core.repository.TestCacheRepository;
 import com.demo.core.repository.primary.TestRepository;
 import com.demo.core.repository.secondary.StestRepository;
 import com.demo.core.service.TestService;
@@ -16,12 +18,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class TestServiceImpl implements TestService {
     private final TestRepository testRepository;
     private final StestRepository stestRepository;
-
+    private final TestCacheRepository testCacheRepository;
     @Autowired
     @SuppressWarnings("all")
-    public TestServiceImpl(TestRepository testRepository, StestRepository stestRepository) {
+    public TestServiceImpl(TestRepository testRepository, StestRepository stestRepository, TestCacheRepository testCacheRepository) {
         this.testRepository = testRepository;
         this.stestRepository = stestRepository;
+        this.testCacheRepository = testCacheRepository;
     }
 
     @Transactional
@@ -32,6 +35,11 @@ public class TestServiceImpl implements TestService {
 //            throw new RuntimeException("自定义异常");
 //        }
         stestRepository.save(stest);
+        testCacheRepository.save(TestCache.builder()
+                .orderNo(test.getId().toString())
+                .distributionStatus(1)
+                .sellerAccountId(2l)
+                .build());
         return true;
     }
 }

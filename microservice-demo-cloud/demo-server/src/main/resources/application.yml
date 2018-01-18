@@ -41,6 +41,9 @@ spring:
 #        schema: classpath:/ddl/secondary/init.ddl
 #        initialize: true
 #        continue-on-error: true
+  redis:
+    host: localhost
+    port: 6379
 feign:
   hystrix:
     enabled: true
