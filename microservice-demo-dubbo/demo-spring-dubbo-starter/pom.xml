@@ -13,7 +13,7 @@
     <name>demo-spring-dubbo-starter</name>
     <dependencies>
         <dependency>
-            <groupId>dubbo-ts</groupId>
+            <groupId>dubbo</groupId>
             <artifactId>spring-boot-dubbo-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
